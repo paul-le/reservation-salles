@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+
+
+body{
+    margin:0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+#menuflexing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 0.5px solid black;
+}
+
+#logoheader{
+    width: 150px;
+    height: 100px;
+}
+
+#headerflex{
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    /*justify-content: space-around;*/
+    align-items: center;
+}
+
+li{
+    margin-right: 60px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+}
+
+#headerflex a{
+    text-decoration: none;
+    color:black;
+}
+
+#headerflex a:active{
+    color:black;
+}
+
+#headerflex a:visited{
+    color:black;
+}
+
+#bottomheaderbg{
+    background-image: url('images/reservationbg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    border-bottom: 0.5px solid black;
+}
+
+.bienvenue{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 50px;
+    color:white;
+    align-items: center;
+    height: 350px;
+    padding-right: 25%;
+}
