@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap');
+
+
+
+
+body{
+    margin:0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+#menuflexing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 0.5px solid black;
+}
+
+#logoheader{
+    width: 150px;
+    height: 100px;
+}
+
+#headerflex{
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    /*justify-content: space-around;*/
+    align-items: center;
+}
+
+.liheader{
+    margin-right: 60px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+}
+
+#headerflex a{
+    text-decoration: none;
+    color:black;
+}
+
+#headerflex a:active{
+    color:black;
+}
+
+#headerflex a:visited{
+    color:black;
+}
+
+#imglogout{
+    width: 28px;
+    height: 28px;
+    /*border: 2px solid rgb(54, 54, 54);
+    border-radius:50% 50% 50% 50%;
+    padding:3px;*/
+}
+
+#bottomheaderbg{
+    background-image: url('images/reservationbg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    border-bottom: 0.5px solid black;
+}
+
+.bienvenue{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 90px;
+    color:white;
+    align-items: center;
+    height: 350px;
+    padding-right: 18%;
+    text-decoration: underline #d40000;
+    font-family: 'Dancing Script', cursive;
+}
+
+.articleimg img{
+    width: 180px;
+    height: 150px;
+    border:1px solid black;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#mainindex{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.articlemain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.articleli1{
+    font-size: 15px;
+    max-width: 100px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.sectionstyle{
+    background-color: rgb(243, 243, 243);
+    padding:1%;
+    box-shadow: 0 15px 6px -6px #777;
+    flex-basis: 15px;
+    margin-left:35px;
+    margin-right:35px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.sectionstyle:hover{
+    background-color: rgb(216, 215, 215);
+}
+
+footer{
+    background-image: url('images/footerbg.jpg');
+    height: 250px;
+    background-size: cover;
+    border-top: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+#footerimglogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+#footerimglogo img{
+    width: 180px;
+    height: 120px;
+    margin-top: 3.5%;
+    margin-left: 3.5%;
+}
+
+#titrefooterlogo{
+    color:white;
+    align-items: center;
+    font-size: 70px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.lifooter{
+    display: flex;
+    margin-right: 60px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 28px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#socialfootersection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#socialfooter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#socialfooter img{
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+
+#socialfooter2 img{
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+/* LES SECTIONS DANS LE MAIN SERONT EN FLEX COLUMN */
