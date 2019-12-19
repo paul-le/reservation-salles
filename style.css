@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap');
 
 
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+
 
 
 body{
@@ -83,10 +89,9 @@ header{
 }
 
 .articleimg img{
-    width: 180px;
-    height: 150px;
+    width: 210px;
+    height: 180px;
     border:1px solid black;
-    border-radius: 5px 5px 5px 5px;
 }
 
 #mainindex{
@@ -112,13 +117,11 @@ header{
 }
 
 .sectionstyle{
-    background-color: rgb(243, 243, 243);
-    padding:1%;
+    background-color: rgb(247, 247, 247);
     box-shadow: 0 15px 6px -6px #777;
     flex-basis: 15px;
     margin-left:35px;
     margin-right:35px;
-    border-radius: 5px 5px 5px 5px;
 }
 
 .sectionstyle:hover{
@@ -197,4 +200,98 @@ footer a{
     height: 50px;
     align-items: center;
 }
-/* LES SECTIONS DANS LE MAIN SERONT EN FLEX COLUMN */
+
+
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+
+
+#mainconnexion{
+    display: flex;
+}
+
+#h1connexion{
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+}
+
+#sectionformconnexion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#connexionform{
+    display: flex;
+    flex-direction: column;
+    margin-top: 9%;
+    margin-bottom: 9%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+}
+
+#connexionform input{
+    border-radius: 15px 15px 15px 15px;
+    padding:1%;
+}
+
+#mauvaislogs{
+    font-size: 25px;
+    color: red;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+
+
+#maininscription{
+    display:flex;
+}
+
+#h1inscription{
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+}
+
+#sectionforminscription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#inscriptionform{
+    display: flex;
+    flex-direction: column;
+    margin-top: 9%;
+    margin-bottom: 9%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+}
+
+#inscriptionform input{
+    border-radius: 15px 15px 15px 15px;
+    padding:1%;
+}
+
+
+
