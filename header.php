@@ -1,7 +1,7 @@
 <header>
             <nav>
                 <section id="menuflexing">
-                    <img id="logoheader" src="images/logoreservationtrue.png">
+                    <a href="index.php"><img id="logoheader" src="images/logoreservationtrue.png"></a>
                     <ul id="headerflex">
                         <li class="liheader"><a href="index.php"> ACCUEIL </a></li>
                         <li class="liheader"><a href="planning.php"> PLANNING </a></li>

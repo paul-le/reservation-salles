@@ -19,6 +19,7 @@
         if($count > 0 && password_verify($_POST['password'],$resultat2['password']))
         {
             $_SESSION['login'] = $log;
+            $_SESSION['id'] = $resultat[0];
             header('Location: index.php');
         }
         else
