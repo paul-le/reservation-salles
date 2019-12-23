@@ -15,11 +15,14 @@
         $resultat = mysqli_fetch_array($query);
         $count = $resultat['toast'];
         $resultat2 = mysqli_fetch_array($query2);
+        $requete3 = "SELECT id FROM utilisateurs WHERE login =\"$log\"";
+        $query3 = mysqli_query($connexion,$requete3);
+        $resultat3 = mysqli_fetch_array($query3);
 
         if($count > 0 && password_verify($_POST['password'],$resultat2['password']))
         {
             $_SESSION['login'] = $log;
-            $_SESSION['id'] = $resultat[0];
+            $_SESSION['id'] = $resultat3;
             header('Location: index.php');
         }
         else

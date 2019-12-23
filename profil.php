@@ -1,6 +1,10 @@
 <?php
 session_start();
-var_dump($_SESSION)
+var_dump($_SESSION);
+$connexion = mysqli_connect("localhost","root","","reservationsalles");
+$requete = "SELECT * FROM utilisateurs WHERE login = '".$_SESSION['login']."' ";
+$query = mysqli_query($connexion, $requete);
+$resultat = mysqli_fetch_assoc($query);
 ?>
 
 <!DOCTYPE html>
@@ -11,3 +15,21 @@ var_dump($_SESSION)
         </head>
         <body>
         <?php include("header.php") ?>
+        <main>
+        <?php if (isset($_SESSION['login'])){ ?>
+
+            <form action="" method="post">
+                <label> Votre Login </label><br>
+                    <input type="text" name="login" value="<?php echo $resultat['login']; ?>"><br>
+                <label> Votre mot de passe </label><br>
+                    <input type="password" name="password"><br>
+                <label> Confirmez votre mot de passe </label><br>
+                    <input type="password" name="passwordcon"><br>
+                <input name="ID" type="hidden" value=<?php echo $resultat['id']; ?>>
+                    <br><br>
+
+
+        <?php } ?>
+        </main>
+        <?php include("footer.php")?>
+    </html>

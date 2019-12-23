@@ -32,7 +32,7 @@
         }
         else
         {
-            echo "Identifiant déjà existant.";
+            //echo "Identifiant déjà existant.";
         }
     }
 
@@ -56,6 +56,7 @@
                         <input type="password" placeholder="Mot de passe" name="password" required><br/><br/>
                         <input type="password" placeholder="Confirmation mot de passe" name="confirmationpassword" required><br/><br/>
                         <input type="submit" value="S'inscrire" name="inscription" required>
+                        <?php if($inscriptionimpossible == true){echo"<br><br>Identifiant déjà existant";}?>
                 </form>
             </section>
         </main>
