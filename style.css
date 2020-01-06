@@ -59,12 +59,26 @@ header{
     color:black;
 }
 
+.headerbouton:hover{
+    border-top: 1.5px solid black;
+    padding-top: 7px;
+    background-image:url('images/listhover.gif');
+    background-size: 500px 350px;
+}
+
+#imglogout:hover{
+    /*background-color: black;*/
+    transform: rotate(360deg) scale(1.5);
+    -webkit-transform: rotate(360deg) scale(1.5);
+}
+
 #imglogout{
     width: 28px;
     height: 28px;
     /*border: 2px solid rgb(54, 54, 54);
     border-radius:50% 50% 50% 50%;
     padding:3px;*/
+    transition: all 0.5s ease-out;
 }
 
 #bottomheaderbg{
@@ -293,5 +307,43 @@ footer a{
     padding:1%;
 }
 
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
 
+#mainprofil{
+    display:flex;
+}
 
+#h1profil{
+    font-family:'Dancing Script', cursive;
+    font-size: 100px;
+}
+
+#sectionformprofil{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+#profilform{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+}
+
+#profilform input{
+    border-radius: 15px 15px 15px 15px;
+    padding:1%;
+}

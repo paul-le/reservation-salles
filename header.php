@@ -3,14 +3,14 @@
                 <section id="menuflexing">
                     <a href="index.php"><img id="logoheader" src="images/logoreservationtrue.png"></a>
                     <ul id="headerflex">
-                        <li class="liheader"><a href="index.php"> ACCUEIL </a></li>
-                        <li class="liheader"><a href="planning.php"> PLANNING </a></li>
-                        <li class="liheader"><a href="reservation.php"> RÉSERVATION </a></li>
+                        <li class="liheader"><a class="headerbouton" href="index.php"> ACCUEIL </a></li>
+                        <li class="liheader"><a class="headerbouton" href="planning.php"> PLANNING </a></li>
+                        <li class="liheader"><a class="headerbouton" href="reservation.php"> RÉSERVATION </a></li>
                         <?php if(!isset($_SESSION['login'])){?>
-                        <li class="liheader"><a href="inscription.php"> INSCRIPTION </a></li>
-                        <li class="liheader"><a href="connexion.php"> CONNEXION </a></li>
+                        <li class="liheader"><a class="headerbouton" href="inscription.php"> INSCRIPTION </a></li>
+                        <li class="liheader"><a class="headerbouton" href="connexion.php"> CONNEXION </a></li>
                         <?php } if(isset($_SESSION['login'])){?>
-                        <li class="liheader"><a href="profil.php"> PROFIL </a></li>             <li class="liheader"><a href="logout.php"><img id="imglogout" src="images/deconnexion.png"></a></li>
+                        <li class="liheader"><a class="headerbouton" href="profil.php"> PROFIL </a></li>             <li class="liheader"><a id="boutondeco" href="logout.php"><img id="imglogout" src="images/deconnexion.png"></a></li>
                         <?php }?>   
                     </ul>
                 </section>
