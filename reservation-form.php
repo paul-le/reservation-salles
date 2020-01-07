@@ -15,10 +15,10 @@
             <input type="text" name="description" required><br/><br/>
 
             <label>Date de Debut :</label>
-            <input type="datetime-local" name="dateDebut" value="2019-06-12T19:30" min="2019-01-07T00:00" max="2019-12-14T00:00" required ><br/><br/>
+            <input type="datetime-local" name="dateDebut" value="2019-12-12T08:00" min="2019-01-07T08:00" max="2020-12-14T08:00" required ><br/><br/>
 
             <label>Date de Fin :</label>
-            <input type="datetime-local" name="dateFin" value="2019-06-12T19:30" min="2019-01-07T00:00" max="2019-12-14T00:00" required><br/><br/>
+            <input type="datetime-local" name="dateFin" value="2019-12-12T08:00" min="2019-01-07T19:00" max="2020-12-14T19:00" required><br/><br/>
 
             <input type="submit" value="Reservation" name="reservation" required>
         </form>
@@ -48,18 +48,31 @@
 	if(isset($_POST["dateFin"]))
 	{
 		$dateFin=$_POST["dateFin"];
-	}   
+	}
+
+	 	
 
     date_default_timezone_set("Europe/Paris");
 
     $connexion = mysqli_connect("localhost", "root","","reservationsalles");
 
+
+
+    $requete3 = "SELECT id FROM utilisateurs WHERE login = '".$_SESSION['id']."'  ";
+    $query3 = mysqli_query($connexion, $requete3);
+    $resultat3 = mysqli_fetch_array($query3);
+
+    echo $resultat3;
+
+
+
     if(isset($_POST['reservation']))
+
     {
-        $requete = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$dateDebut', '$dateFin', 1)";
-        $query = mysqli_query($connexion , $requete);
+        $requeteInsert = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$dateDebut', '$dateFin','".$_SESSION['id']."')";
+        $query2 = mysqli_query($connexion , $requeteInsert);
         
-        echo $requete;
+        echo $requeteInsert;
 
    	}
 ?>
