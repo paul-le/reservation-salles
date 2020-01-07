@@ -1,57 +1,42 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Planning</title>
-</head>
-<body>
-	<main>
-		<style>
-    section{
-        padding: 20px;
-    }
-    td{
-        border: 1px solid black;
-        padding: 40px ;
-        width: 20%;
-    }
+    <head>
+        <title>Planning</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <?php include("header.php")?>
+        <main>
+            <section id="sectiontableplanning">
+                <table>
+                    <?php 
+                        echo "<th></th>";
+                        echo "<th>Lundi</th>";
+                        echo "<th>Mardi</th>";
+                        echo "<th>Mercredi</th>";
+                        echo "<th>Jeudi</th>";
+                        echo "<th>Vendredi</th>";
 
-    th{
-    	padding-bottom: 5% ;
-    }
-</style>
-<section>
-    <h1>PLANNING</h1>
-    <table>
-        <tr>
-            
-        </tr>
-        <tr>
-           <th> </th>
-           <td>Lundi</td>
-           <td>Mardi</td>
-           <td>Mercredi</td>
-           <td>Jeudi</td>
-           <td>Vendredi</td>
-        </tr>
-        <?php
-            for($j = 8; $j < 19; $j++){
-            ?>
-                <tr>
-                    <th> <?php echo $j."h"; ?></th>
-                    <?php
-                        for($i = 1; $i < 6; $i++){
-                        ?>
-                            <td></td>
-                        <?php               
-                        }
+                    for($heure = 8; $heure <= 19 ; $heure++)
+                    {
+                        echo "<tr>";
+                        echo "<td><b>$heure h</b></td>";
+                    for($jour = 0; $jour < 5; $jour++)
+                    {
+                        echo "<td><center>$jour";
+                    }
+                        echo "</td>";
+                    }
+                        echo "</tr>";
+                    
                     ?>
-                </tr>
-            <?php
-            }
-        ?>
-    </table>
-</section>
-	</main>
-
-</body>
+                </table>
+            </section>
+        </main>
+        <?php include("footer.php")?>
+    </body>
 </html>
