@@ -1,7 +1,6 @@
 <?php
     session_start();
-    //$connexionimpossible = false;
-
+    $connexionimpossible = false;
 
     if(isset($_POST['login']) && isset($_POST['password']))
     {
@@ -16,30 +15,43 @@
         $resultat = mysqli_fetch_array($query);
         $count = $resultat['toast'];
         $resultat2 = mysqli_fetch_array($query2);
-        
-        echo $count;
+        $requete3 = "SELECT id FROM utilisateurs WHERE login =\"$log\"";
+        $query3 = mysqli_query($connexion,$requete3);
+        $resultat3 = mysqli_fetch_array($query3);
 
         if($count > 0 && password_verify($_POST['password'],$resultat2['password']))
         {
             $_SESSION['login'] = $log;
+            $_SESSION['id'] = $resultat3;
             header('Location: index.php');
         }
         else
         {
-            echo "Mauvais logs.";
+            $connexionimpossible = true;
         }
-
     }
-
-
-?>
-
-
-
+        ?>
+<!DOCTYPE html>
 <html>
-    <form method="POST" action="connexion.php">
-        <input type="text" placeholder="Identifiant" name="login" required><br><br>
-        <input type="password" placeholder="Mot de passe" name="password" required><br><br>
-        <input type="submit" name="connexion" value="Se connecter">
-    </form>
+    <head>
+        <title>Connexion</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <?php include("header.php") ?>
+        <main id="mainconnexion">
+            <section id="sectionformconnexion">
+                <form id="connexionform" method="POST" action="connexion.php">
+                    <h1 id="h1connexion">- Connexion -</h1><br><br>
+                    <input type="text" placeholder="Identifiant" name="login" required><br><br>
+                    <input type="password" placeholder="Mot de passe" name="password" required><br><br>
+                    <input type="submit" name="connexion" value="Se connecter">                    <?php if($connexionimpossible == true)
+                            {
+                                echo "<br><br><span id=\"mauvaislogs\"> /!\  Mauvais identifiant ou mot de passe.  /!\ ";
+                            } ?>
+                </form>
+            </section>
+        </main>
+        <?php include("footer.php")?>
+    </body>
 </html>
