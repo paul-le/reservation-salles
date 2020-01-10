@@ -31,22 +31,23 @@
                 <table>
                     <?php 
 
+                        
                         $jourssemaine = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche");
                         $j = 0;
                         $h = 8;
                         $jourscases = 0;
 
+                        //echo "<thead>";
                         echo "<tr>";
                         echo "<th></th>";
-                        
                         while($j < 7)
                         {
                             echo "<th>".$jourssemaine[$j]."</th>";
                             $j++;
                         }
-
                         echo "</tr>";
-
+                        //echo "</thead>";
+                        //echo "<tbody>";
                         while($h != 20)
                         {
                             echo "<tr>";
@@ -55,34 +56,35 @@
                                 echo "<td><b>".$h." h</b></td>";
                                 $jourscases++;
                             }
-                            $r = 0;
-                            $tableaudatecount = count($resultatdate);   
-                                while($r < $tableaudatecount)
-                                {
-                                            $dateheure = date("G", strtotime($resultatdate[$r][0]));
-                                            $datejour = date("N", strtotime($resultatdate[$r][0]));
-                                        while($jourscases < 8 && $jourscases != 0)
-                                        {
-                                            if($datejour == $jourscases && $dateheure == $h)
-                                            {
-                                                echo "<td>Réservé</td>";
-                                            }
-                                            else
-                                            {
-                                                echo "<td>Dispo</td>";
-                                            }
-                                            $jourscases++;
-                                        }
-                                    $r++;
-                                }
+                            while($jourscases < 8 && $jourscases != 0)
+                            {
+                                echo "<td>$jourscases$h</td>";
+                                $jourscases++;
+                            }
+                        
                             echo "</tr>";
                             $jourscases = 0;
                             $h++;
-                            
                         }
-                        
                         //echo "</tbody>";
 
+                        $r = 0;
+                        $tableaudatecount = count($resultatdate);
+
+                        while($r < $tableaudatecount)
+                        {
+                        $dateheure = date("G", strtotime($resultatdate[$r][0]));
+                        $datejour = date("w", strtotime($resultatdate[$r][0])-1);  
+                            if($datejour == $j && $dateheure == $h)
+                            {
+                                echo "Réservé";
+                            }
+                            else
+                            {
+                                echo "";
+                            }
+                        $r++;
+                        }
                         echo $datejour;
                         echo $dateheure;
                         

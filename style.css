@@ -258,6 +258,10 @@ footer a{
     padding:1%;
 }
 
+#connexionform input:focus{
+    outline:none;
+}
+
 #mauvaislogs{
     font-size: 25px;
     color: red;
@@ -328,6 +332,7 @@ footer a{
     justify-content: center;
     align-items: center;
     width:100%;
+    font-family: 'Bebas Neue', cursive;
 }
 
 #profilform{
@@ -346,4 +351,70 @@ footer a{
 #profilform input{
     border-radius: 15px 15px 15px 15px;
     padding:1%;
+}
+
+
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+
+
+table{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: 'Arial';
+    height: 100%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+th{
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+}
+
+td{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#sectiontableplanning{
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectiontableflex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    /*border-right: 1.5px solid black;
+    border-left: 1.5px solid black;*/
+    height: 100%;
+}
+
+#planningliens a{
+    text-decoration: none;
+    color:black;
+}
+
+#planningliens a:visited{
+    text-decoration: none;
+    color:black;
+}
+
+#planningliens a:active{
+    text-decoration: none;
+    color:black;
 }

@@ -22,7 +22,7 @@
         if($count > 0 && password_verify($_POST['password'],$resultat2['password']))
         {
             $_SESSION['login'] = $log;
-            $_SESSION['id'] = $resultat3;
+            $_SESSION['id'] = $resultat3[0];
             header('Location: index.php');
         }
         else
@@ -41,6 +41,12 @@
         <?php include("header.php") ?>
         <main id="mainconnexion">
             <section id="sectionformconnexion">
+                <?php if(isset($_SESSION['login']))
+                    {
+                        echo "Vous êtes déjà connecté(e)";
+                    }
+                    else
+                    { ?>
                 <form id="connexionform" method="POST" action="connexion.php">
                     <h1 id="h1connexion">- Connexion -</h1><br><br>
                     <input type="text" placeholder="Identifiant" name="login" required><br><br>
@@ -49,6 +55,7 @@
                             {
                                 echo "<br><br><span id=\"mauvaislogs\"> /!\  Mauvais identifiant ou mot de passe.  /!\ ";
                             } ?>
+                    <?php } ?>
                 </form>
             </section>
         </main>

@@ -26,6 +26,7 @@ $resultat = mysqli_fetch_assoc($query);
                         <label> Confirmez votre mot de passe </label><br>
                             <input type="password" name="passwordcon"><br>
                         <input name="ID" type="hidden" value=<?php echo $resultat['id']; ?>>
+                        <input type="submit" name="confirmer" value="Confirmer">
                         <br><br>
                 <section>
                     <?php } ?>
