@@ -38,7 +38,7 @@
 
                         echo "<tr>";
                         echo "<th></th>";
-                        
+
                         while($j < 7)
                         {
                             echo "<th>".$jourssemaine[$j]."</th>";
@@ -46,47 +46,45 @@
                         }
 
                         echo "</tr>";
+                        $jourscases = 0;
 
                         while($h != 20)
                         {
                             echo "<tr>";
-                            if($jourscases == 0)
+                            if($jourscases >= 0)
                             {
                                 echo "<td><b>".$h." h</b></td>";
                                 $jourscases++;
                             }
                             $r = 0;
-                            $tableaudatecount = count($resultatdate);   
-                                while($r < $tableaudatecount)
+                            $tableaudatecount = count($resultatdate);
+                            //echo $tableaudatecount."<br>";
+                            while($r < $tableaudatecount)
+                            {                                    
+                                $dateheure = date("G", strtotime($resultatdate[$r][0]));
+                                $datejour = date("N", strtotime($resultatdate[$r][0]));
+                                // echo $datejour." ".$jourscases." ".$dateheure." ".$h."<br>";
+                                //$jourscases = 0;
+                                while($jourscases < 8/*$jourscases != 0*/)
                                 {
-                                            $dateheure = date("G", strtotime($resultatdate[$r][0]));
-                                            $datejour = date("N", strtotime($resultatdate[$r][0]));
-                                        while($jourscases < 8 && $jourscases != 0)
-                                        {
-                                            if($datejour == $jourscases && $dateheure == $h)
-                                            {
-                                                echo "<td>Réservé</td>";
-                                            }
-                                            else
-                                            {
-                                                echo "<td>Dispo</td>";
-                                            }
-                                            $jourscases++;
-                                        }
-                                    $r++;
+                                    if($datejour == $jourscases && $dateheure == $h)
+                                    {
+                                        echo "<td>Réservé</td>";
+                                        
+                                    }
+                                    else
+                                    {
+                                        echo "<td>Dispo</td>";
+                                    }
+                                    $jourscases++;
                                 }
+                                $r++;
+                            }
                             echo "</tr>";
-                            $jourscases = 0;
+                            //$jourscases = 0;
                             $h++;
                             
-                        }
-                        
-                        //echo "</tbody>";
-
-                        echo $datejour;
-                        echo $dateheure;
-                        
-                    
+                        }                        
                     ?>
                 </table>
                 <section>
