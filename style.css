@@ -367,22 +367,44 @@ table{
     flex-direction: column;
     margin-top: 5%;
     margin-bottom: 5%;
-    font-family: 'Arial';
     height: 100%;
-    padding-top: 4%;
-    padding-bottom: 4%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-collapse: collapse;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-th{
-    padding-right: 25px;
-    padding-left: 25px;
-    padding-bottom: 25px;
+#thplanning{
+    padding: 18px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border:1.5px black solid;
 }
 
 td{
     margin-bottom: 5px;
     margin-top: 5px;
     text-align: center;
+    border: 1.5px black solid;
+    padding : 15px;
+}
+
+#tdheure{
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#tddispoplanning:hover{
+    background-color: green;
+}
+
+td a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td a:hover{
+    color: white;
 }
 
 #sectiontableplanning{

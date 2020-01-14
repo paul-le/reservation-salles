@@ -10,7 +10,7 @@
                     <ul>
                         <li class="lifooter"><a href="index.php"> ACCUEIL </a></li>
                         <li class="lifooter"><a href="planning.php"> PLANNING </a></li>
-                        <li class="lifooter"><a href="reservation.php"> RÉSERVATION </a></li>
+                        <li class="lifooter"><a href="reservation-form.php"> RÉSERVATION </a></li>
                         
                         <?php if(!isset($_SESSION['login'])){?>
                         <li class="lifooter"><a href="inscription.php"> INSCRIPTION </a></li>

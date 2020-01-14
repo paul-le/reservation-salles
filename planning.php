@@ -1,20 +1,20 @@
 <?php
     session_start();
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     $connexion = mysqli_connect("localhost", "root","","reservationsalles");
     $requete = "SELECT u.id , u.login , r.titre , r.description , r.debut , r.fin FROM utilisateurs AS u INNER JOIN reservations AS r ON u.id = r.id_utilisateur";
     $query = mysqli_query($connexion,$requete);
     $resultat = mysqli_fetch_all($query);
-    var_dump($resultat);
+    //var_dump($resultat);
     $format= date('Y-m-d  H');
     $requetedate = "SELECT debut FROM reservations";
     $querydate = mysqli_query($connexion, $requetedate);
     $resultatdate = mysqli_fetch_all($querydate);
+    $tableaudatecount = count($resultatdate); 
     
-    echo $format;
-
-    var_dump($resultatdate);
-
+    //echo $format;
+    //var_dump($resultatdate);
+    $stopnope = false;
 ?>
 
 <!DOCTYPE html>
@@ -30,61 +30,76 @@
                 <section id="sectiontableflex">
                 <table>
                     <?php 
-
                         $jourssemaine = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche");
                         $j = 0;
                         $h = 8;
                         $jourscases = 0;
-
                         echo "<tr>";
                         echo "<th></th>";
-
+                        
                         while($j < 7)
                         {
-                            echo "<th>".$jourssemaine[$j]."</th>";
+                            echo "<th id='thplanning'>".$jourssemaine[$j]."</th>";
                             $j++;
                         }
-
                         echo "</tr>";
-                        $jourscases = 0;
-
                         while($h != 20)
                         {
+                            $resok = false;
                             echo "<tr>";
-                            if($jourscases >= 0)
+                            if($jourscases == 0)
                             {
-                                echo "<td><b>".$h." h</b></td>";
+                                echo "<td id='tdheure'><b>".$h."h</b></td>";
                                 $jourscases++;
                             }
                             $r = 0;
-                            $tableaudatecount = count($resultatdate);
-                            //echo $tableaudatecount."<br>";
-                            while($r < $tableaudatecount)
-                            {                                    
-                                $dateheure = date("G", strtotime($resultatdate[$r][0]));
-                                $datejour = date("N", strtotime($resultatdate[$r][0]));
-                                // echo $datejour." ".$jourscases." ".$dateheure." ".$h."<br>";
-                                //$jourscases = 0;
-                                while($jourscases < 8/*$jourscases != 0*/)
-                                {
-                                    if($datejour == $jourscases && $dateheure == $h)
-                                    {
-                                        echo "<td>Réservé</td>";
-                                        
-                                    }
-                                    else
-                                    {
-                                        echo "<td>Dispo</td>";
-                                    }
-                                    $jourscases++;
-                                }
-                                $r++;
-                            }
+                              
+                                            $jourscases = 1;
+                                        while($jourscases < 8 && $jourscases != 0)
+                                        {
+                                            while($r < $tableaudatecount)
+                                            {
+                                            $stopitnow = true;
+                                            $dateheure = date("G", strtotime($resultatdate[$r][0]));
+                                            $datejour = date("N", strtotime($resultatdate[$r][0]));
+                                            //var_dump($tableaudatecount);
+                                           if($datejour == $jourscases && $dateheure == $h)
+                                            {
+                                                echo "<td>Réservé</td>";
+                                                $stopnope = true;
+                                            }
+                                            else {
+                                                $stopitnow = false;
+                                            }
+
+                                            
+                                            $r++;
+                                            
+                                            }
+
+                                            if ($stopitnow == false  && $stopnope == false)
+                                            {
+                                                echo "<td id='tddispoplanning'><a href='reservation-form.php'>Disponible</a></td>";
+                                            }
+                                            $r = 0;
+                                            $jourscases++;
+                                            $stopitnow = false;
+                                            $stopnope = false;
+                                        }
+
+                                        // CREER UNE NOUVELLE BOUCLE POUR AFFICHER DANS LES TD ET PAS FAIRE UNE BOUCLE SEULEMENT POUR AFFICHER UN TD
+                                    
+                                
                             echo "</tr>";
-                            //$jourscases = 0;
+                            $jourscases = 0;
                             $h++;
                             
-                        }                        
+                        }
+                    
+                        
+                        //echo "</tbody>";
+                        
+                    
                     ?>
                 </table>
                 <section>
@@ -93,7 +108,3 @@
         <?php include("footer.php")?>
     </body>
 </html> 
-
-
-//foreach dates
-                                    //Si le jour de la semaine est égal à j et l'heure est égale à h : afficher la réservation
