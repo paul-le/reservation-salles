@@ -7,10 +7,10 @@
     $resultat = mysqli_fetch_all($query);
     //var_dump($resultat);
     $format= date('Y-m-d  H');
-    $requetedate = "SELECT debut FROM reservations";
+    $requetedate = "SELECT debut,titre,id FROM reservations";
     $querydate = mysqli_query($connexion, $requetedate);
     $resultatdate = mysqli_fetch_all($querydate);
-    $tableaudatecount = count($resultatdate); 
+    $tableaudatecount = count($resultatdate);
     
     //echo $format;
     //var_dump($resultatdate);
@@ -62,10 +62,12 @@
                                             $stopitnow = true;
                                             $dateheure = date("G", strtotime($resultatdate[$r][0]));
                                             $datejour = date("N", strtotime($resultatdate[$r][0]));
+                                            $titreres = $resultatdate[$r][1];
+                                            $idres = $resultatdate[$r][2];
                                             //var_dump($tableaudatecount);
                                            if($datejour == $jourscases && $dateheure == $h)
                                             {
-                                                echo "<td>Réservé</td>";
+                                                echo "<td><a href='evenement.php/?id=".$idres."'>Réservé : ".$titreres."</a></td>";
                                                 $stopnope = true;
                                             }
                                             else {
