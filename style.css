@@ -398,9 +398,14 @@ td{
     background-color: green;
 }
 
+#alreadyreserved:hover{
+    background-color: red;
+}
+
 td a{
     text-decoration: none;
     font-weight: bold;
+    color: black;
 }
 
 td a:hover{
@@ -439,4 +444,80 @@ td a:hover{
 #planningliens a:active{
     text-decoration: none;
     color:black;
+}
+
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+
+#reservationh1{
+    font-family:'Dancing Script', cursive;
+    font-size: 65px;
+}
+
+#mainreservationform{
+    height: 100%;
+}
+
+#sectionevents{
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectioneventsflex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%; 
+    height: 100%;
+}
+
+#reservationform{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+    font-family: 'Bebas Neue', cursive;
+}
+
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+
+
+#sectioneventsflexaffichage{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    font-family: 'Bebas Neue', cursive;
+    height: 100%;
+}
+
+#sectioneventsinside{
+    display: flex;
+    flex-direction: column;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
 }

@@ -36,8 +36,12 @@
     </head>
     <body>
         <?php include("header.php")?>
-        <main>
-            <form method="post" action="reservation-form.php">
+        <main id="mainreservationform">
+        <section id="sectionevents">
+            <section id="sectioneventsflex">
+                
+            <form method="post" id="reservationform" action="">
+                <h1 id="reservationh1">- Réservation -</h1>
 			    <label>Titre :</label>
                     <input type="text" name="titre" required><br/><br/>
                 <label>Description :</label>
@@ -47,7 +51,9 @@
                 <label>Date de Fin :</label>
                     <input type="datetime-local" name="dateFin" value="2020-01-13T09:00" min="2020-01-31T9:00" max="2020-01-31T19:00" required><br/><br/>
                     <input type="submit" value="Réserver" name="reservation" required>
-        </form>
+            </section>
+        </section>
+            </form>
         </main>
 
 <?php 
@@ -83,6 +89,7 @@
             {
                 $requeteInsert = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$dateDebut', '$dateFin' , $intloginlog )";
                 $query2 = mysqli_query($connexion , $requeteInsert);
+                $creneau = "";
 
                 header('location:planning.php');
             }
