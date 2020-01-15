@@ -67,7 +67,7 @@
                                             //var_dump($tableaudatecount);
                                            if($datejour == $jourscases && $dateheure == $h)
                                             {
-                                                echo "<td><a href='evenement.php/?id=".$idres."'>Réservé : ".$titreres."</a></td>";
+                                                echo "<td><a href='reservation.php/?id=".$idres."'>Réservé : ".$titreres."</a></td>";
                                                 $stopnope = true;
                                             }
                                             else {
