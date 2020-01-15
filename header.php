@@ -5,7 +5,7 @@
                     <ul id="headerflex">
                         <li class="liheader"><a class="headerbouton" href="index.php"> ACCUEIL </a></li>
                         <li class="liheader"><a class="headerbouton" href="planning.php"> PLANNING </a></li>
-                        <li class="liheader"><a class="headerbouton" href="reservation.php"> RÉSERVATION </a></li>
+                        <li class="liheader"><a class="headerbouton" href="reservation-form.php"> RÉSERVATION </a></li>
                         <?php if(!isset($_SESSION['login'])){?>
                         <li class="liheader"><a class="headerbouton" href="inscription.php"> INSCRIPTION </a></li>
                         <li class="liheader"><a class="headerbouton" href="connexion.php"> CONNEXION </a></li>
