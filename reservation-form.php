@@ -1,78 +1,97 @@
-<?php session_start();  ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Formulaire de Reservation</title>
-</head>
-<body>
-	<main>
-		<form method="post" action="reservation-form.php">
-			<label>Titre :</label>
-            <input type="text" name="titre" required><br/><br/>
-
-            <label>Description :</label>
-            <input type="text" name="description" required><br/><br/>
-
-            <label>Date de Debut :</label>
-            <input type="datetime-local" name="dateDebut" value="2019-12-12T08:00" min="2019-01-07T08:00" max="2020-12-14T08:00" required ><br/><br/>
-
-            <label>Date de Fin :</label>
-            <input type="datetime-local" name="dateFin" value="2019-12-12T08:00" min="2019-01-07T19:00" max="2020-12-14T19:00" required><br/><br/>
-
-            <input type="submit" value="Reservation" name="reservation" required>
-        </form>
-	</main>
-
-</body>
-</html>
-
-
-<?php  
+<?php
+    session_start();
 
 	if(isset($_POST["titre"]))
 	{
 		$titre=$_POST["titre"];
 	}
-
 	if(isset($_POST["description"]))
 	{
 		$description=$_POST["description"];
 	}
-
 	if(isset($_POST["dateDebut"]))
 	{
 		$dateDebut=$_POST["dateDebut"];
 	}
-
 	if(isset($_POST["dateFin"]))
 	{
 		$dateFin=$_POST["dateFin"];
 	}
-
 	 	
-
     date_default_timezone_set("Europe/Paris");
-
+    $loginlog = $_SESSION['id'];
+    $intloginlog = intval($loginlog);
     $connexion = mysqli_connect("localhost", "root","","reservationsalles");
+    //$requete3 = "SELECT id FROM utilisateurs WHERE login = \"$loginlog\"  ";
+    //$query3 = mysqli_query($connexion, $requete3);
+    //$resultat3 = mysqli_fetch_all($query3);
 
-
-
-    $requete3 = "SELECT id FROM utilisateurs WHERE login = '".$_SESSION['id']."'  ";
-    $query3 = mysqli_query($connexion, $requete3);
-    $resultat3 = mysqli_fetch_array($query3);
-
-    echo $resultat3;
-
-
-
-    if(isset($_POST['reservation']))
-
-    {
-        $requeteInsert = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$dateDebut', '$dateFin','".$_SESSION['id']."')";
-        $query2 = mysqli_query($connexion , $requeteInsert);
-        
-        echo $requeteInsert;
-
-   	}
 ?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Réservation</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <?php include("header.php")?>
+        <main>
+            <form method="post" action="reservation-form.php">
+			    <label>Titre :</label>
+                    <input type="text" name="titre" required><br/><br/>
+                <label>Description :</label>
+                    <input type="text" name="description" required><br/><br/>
+                <label>Date de Debut :</label>
+                    <input type="datetime-local" name="dateDebut" value="2020-01-13T08:00" min="2020-01-13T08:00" max="2020-1201-10T08:00" required ><br/><br/>
+                <label>Date de Fin :</label>
+                    <input type="datetime-local" name="dateFin" value="2020-01-13T09:00" min="2020-01-31T9:00" max="2020-01-31T19:00" required><br/><br/>
+                    <input type="submit" value="Réserver" name="reservation" required>
+        </form>
+        </main>
+
+<?php 
+
+            $connexion2 = mysqli_connect("localhost", "root","","reservationsalles");
+            //$reservationpost = $_POST['reservation'];
+            $requeteres = "SELECT debut FROM reservations";
+            $queryres = mysqli_query($connexion2,$requeteres);
+            $resultatreservationcheck = mysqli_fetch_all($queryres);
+            $tableaudatecount = count($resultatreservationcheck);
+            
+
+            //var_dump($resultatreservationcheck[0][0]);
+            
+      
+        if(isset($_POST['reservation']))
+        {
+            $dateheure = date("Y-m-d H:i:s", strtotime($_POST['dateDebut']));
+            $i = 0;
+            $eventexists = false;
+
+            while($i < $tableaudatecount)
+            {
+                if($resultatreservationcheck[$i][0] == $dateheure)
+                {
+                    echo "";
+                    $eventexists = true;
+                }
+                $i++;
+            }
+
+            if($eventexists == false)
+            {
+                $requeteInsert = "INSERT INTO reservations (titre, description, debut, fin, id_utilisateur) VALUES ('$titre', '$description', '$dateDebut', '$dateFin' , $intloginlog )";
+                $query2 = mysqli_query($connexion , $requeteInsert);
+
+                header('location:planning.php');
+            }
+            else
+            {
+                echo "Créneau déjà pris";
+            }
+
+        }
+            include("footer.php")?>
+        </body>
+    </html>
