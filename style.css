@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap');
+
+
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+/*---------------CSS PAGE D'ACCUEIL----------------*/
+
+
+
+body{
+    margin:0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+#menuflexing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 0.5px solid black;
+}
+
+#logoheader{
+    width: 150px;
+    height: 100px;
+}
+
+#headerflex{
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    /*justify-content: space-around;*/
+    align-items: center;
+}
+
+.liheader{
+    margin-right: 60px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+}
+
+#headerflex a{
+    text-decoration: none;
+    color:black;
+}
+
+#headerflex a:active{
+    color:black;
+}
+
+#headerflex a:visited{
+    color:black;
+}
+
+.headerbouton:hover{
+    border-top: 1.5px solid black;
+    padding-top: 7px;
+    background-image:url('images/listhover.gif');
+    background-size: 500px 350px;
+}
+
+#imglogout:hover{
+    /*background-color: black;*/
+    transform: rotate(360deg) scale(1.5);
+    -webkit-transform: rotate(360deg) scale(1.5);
+}
+
+#imglogout{
+    width: 28px;
+    height: 28px;
+    /*border: 2px solid rgb(54, 54, 54);
+    border-radius:50% 50% 50% 50%;
+    padding:3px;*/
+    transition: all 0.5s ease-out;
+}
+
+#bottomheaderbg{
+    background-image: url('images/reservationbg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    border-bottom: 0.5px solid black;
+}
+
+.bienvenue{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 90px;
+    color:white;
+    align-items: center;
+    height: 350px;
+    padding-right: 18%;
+    text-decoration: underline #d40000;
+    font-family: 'Dancing Script', cursive;
+}
+
+.articleimg img{
+    width: 210px;
+    height: 180px;
+    border:1px solid black;
+}
+
+#mainindex{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.articlemain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.articleli1{
+    font-size: 15px;
+    max-width: 100px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.sectionstyle{
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 15px 6px -6px #777;
+    flex-basis: 15px;
+    margin-left:35px;
+    margin-right:35px;
+}
+
+.sectionstyle:hover{
+    background-color: rgb(216, 215, 215);
+}
+
+footer{
+    background-image: url('images/footerbg.jpg');
+    height: 250px;
+    background-size: cover;
+    border-top: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+#footerimglogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+#footerimglogo img{
+    width: 180px;
+    height: 120px;
+    margin-top: 3.5%;
+    margin-left: 3.5%;
+}
+
+#titrefooterlogo{
+    color:white;
+    align-items: center;
+    font-size: 70px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.lifooter{
+    display: flex;
+    margin-right: 60px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 28px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#socialfootersection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#socialfooter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#socialfooter img{
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+
+#socialfooter2 img{
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+
+
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+/*---------------CSS PAGE CONNEXION----------------*/
+
+
+#mainconnexion{
+    display: flex;
+}
+
+#h1connexion{
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+}
+
+#sectionformconnexion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#connexionform{
+    display: flex;
+    flex-direction: column;
+    margin-top: 9%;
+    margin-bottom: 9%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+}
+
+#connexionform input{
+    border-radius: 15px 15px 15px 15px;
+    padding:1%;
+}
+
+#connexionform input:focus{
+    outline:none;
+}
+
+#mauvaislogs{
+    font-size: 25px;
+    color: red;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+/*---------------CSS PAGE D'INSCRIPTION----------------*/
+
+
+#maininscription{
+    display:flex;
+}
+
+#h1inscription{
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+}
+
+#sectionforminscription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#inscriptionform{
+    display: flex;
+    flex-direction: column;
+    margin-top: 9%;
+    margin-bottom: 9%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+}
+
+#inscriptionform input{
+    border-radius: 15px 15px 15px 15px;
+    padding:1%;
+}
+
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
+/*---------------CSS PAGE DE PROFIL----------------*/
+
+#mainprofil{
+    display:flex;
+}
+
+#h1profil{
+    font-family:'Dancing Script', cursive;
+    font-size: 100px;
+}
+
+#sectionformprofil{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#profilform{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+}
+
+#profilform input{
+    border-radius: 15px 15px 15px 15px;
+    padding:1%;
+}
+
+
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+/*---------------CSS PAGE DU PLANNING----------------*/
+
+
+table{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-collapse: collapse;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+#thplanning{
+    padding: 18px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border:1.5px black solid;
+}
+
+td{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+    border: 1.5px black solid;
+    padding : 15px;
+}
+
+#tdheure{
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#tddispoplanning:hover{
+    background-color: green;
+}
+
+#alreadyreserved:hover{
+    background-color: red;
+}
+
+td a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+td a:hover{
+    color: white;
+}
+
+#sectiontableplanning{
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectiontableflex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    /*border-right: 1.5px solid black;
+    border-left: 1.5px solid black;*/
+    height: 100%;
+}
+
+#planningliens a{
+    text-decoration: none;
+    color:black;
+}
+
+#planningliens a:visited{
+    text-decoration: none;
+    color:black;
+}
+
+#planningliens a:active{
+    text-decoration: none;
+    color:black;
+}
+
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+
+#reservationh1{
+    font-family:'Dancing Script', cursive;
+    font-size: 65px;
+}
+
+#mainreservationform{
+    height: 100%;
+}
+
+#sectionevents{
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectioneventsflex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%; 
+    height: 100%;
+}
+
+#reservationform{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#idneeded{
+    font-size: 50px;
+    margin-top: 43.5px;
+    margin-bottom: 43.5px;
+}
+
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+
+
+#sectioneventsflexaffichage{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    font-family: 'Bebas Neue', cursive;
+    height: 100%;
+}
+
+#sectioneventsinside{
+    display: flex;
+    flex-direction: column;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+}
