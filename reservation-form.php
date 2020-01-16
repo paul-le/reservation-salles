@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    if(isset($_SESSION['login']))
+
 	if(isset($_POST["titre"]))
 	{
 		$titre=$_POST["titre"];
@@ -17,7 +19,9 @@
 	{
 		$dateFin=$_POST["dateFin"];
 	}
-	 	
+    
+    error_reporting(0);
+    ini_set('display_errors', 0);
     date_default_timezone_set("Europe/Paris");
     $loginlog = $_SESSION['id'];
     $intloginlog = intval($loginlog);
@@ -39,8 +43,9 @@
         <main id="mainreservationform">
         <section id="sectionevents">
             <section id="sectioneventsflex">
-                
             <form method="post" id="reservationform" action="">
+                <?php if(isset($_SESSION['login']))
+                { ?>
                 <h1 id="reservationh1">- Réservation -</h1>
 			    <label>Titre :</label>
                     <input type="text" name="titre" required><br/><br/>
@@ -51,6 +56,11 @@
                 <label>Date de Fin :</label>
                     <input type="datetime-local" name="dateFin" value="2020-01-13T09:00" min="2020-01-31T9:00" max="2020-01-31T19:00" required><br/><br/>
                     <input type="submit" value="Réserver" name="reservation" required>
+                <?php }
+                else
+                {
+                    echo "<article id='idneeded'>Connectez-vous pour réserver</article>";
+                } ?>
             </section>
         </section>
             </form>
