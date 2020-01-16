@@ -367,22 +367,49 @@ table{
     flex-direction: column;
     margin-top: 5%;
     margin-bottom: 5%;
-    font-family: 'Arial';
     height: 100%;
-    padding-top: 4%;
-    padding-bottom: 4%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-collapse: collapse;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-th{
-    padding-right: 25px;
-    padding-left: 25px;
-    padding-bottom: 25px;
+#thplanning{
+    padding: 18px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border:1.5px black solid;
 }
 
 td{
     margin-bottom: 5px;
     margin-top: 5px;
     text-align: center;
+    border: 1.5px black solid;
+    padding : 15px;
+}
+
+#tdheure{
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#tddispoplanning:hover{
+    background-color: green;
+}
+
+#alreadyreserved:hover{
+    background-color: red;
+}
+
+td a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+td a:hover{
+    color: white;
 }
 
 #sectiontableplanning{
@@ -417,4 +444,86 @@ td{
 #planningliens a:active{
     text-decoration: none;
     color:black;
+}
+
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+/*---------------CSS DE RESERVATION FORM----------------*/
+
+#reservationh1{
+    font-family:'Dancing Script', cursive;
+    font-size: 65px;
+}
+
+#mainreservationform{
+    height: 100%;
+}
+
+#sectionevents{
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectioneventsflex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%; 
+    height: 100%;
+}
+
+#reservationform{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#idneeded{
+    font-size: 50px;
+    margin-top: 43.5px;
+    margin-bottom: 43.5px;
+}
+
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+/*---------------CSS D'EVENT----------------*/
+
+
+#sectioneventsflexaffichage{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    font-family: 'Bebas Neue', cursive;
+    height: 100%;
+}
+
+#sectioneventsinside{
+    display: flex;
+    flex-direction: column;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-right: 1.5px solid black;
+    border-left: 1.5px solid black;
+    height: 100%;
 }
