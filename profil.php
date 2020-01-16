@@ -58,6 +58,7 @@ $resultat = mysqli_fetch_assoc($query);
                                 {
                                     $login=$_POST["login"];
                                 }
+                                
                                $connexion = mysqli_connect("localhost","root","","reservationsalles");
                                $upLog = "UPDATE utilisateurs SET login = \"$login\" WHERE utilisateurs.login='".$resultat['login']."'";
                                $result = mysqli_query($connexion, $upLog);
