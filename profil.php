@@ -20,7 +20,7 @@ $resultat = mysqli_fetch_assoc($query);
                         <form action="" method="post" id="profilform">
                         <h1 id="h1profil">PROFIL</h1>
                             <label> Votre Login </label><br>
-                                <input type="text" name="login" value="<?php echo $resultat['login']; ?>"><br>
+                                <input type="text" name="login" placeholder="<?php echo $resultat['login']; ?>"><br>
 
                             <label> Votre mot de passe </label><br>
                                 <input type="password" name="password"><br>
@@ -40,7 +40,7 @@ $resultat = mysqli_fetch_assoc($query);
                         $requete3 = "SELECT login FROM utilisateurs WHERE login = '$login'";         
                         $query3 = mysqli_query($connexion, $requete3);         
                         $resultat3 = mysqli_fetch_all($query3);             
-                        if (!empty($resultat3))             
+                        if (!empty($_POST['login']) && $resultat3 == $_POST['login'])             
                         {                 
                             echo "Ce Login est déjà prit";             
                         }
@@ -50,7 +50,7 @@ $resultat = mysqli_fetch_assoc($query);
                         }          
                         else
                         {
-                            if($_POST['login'] != $resultat['login'])
+                            if($_POST['login'] != $resultat['login'] && !empty($_POST['login']))
 
                             {
                                 
@@ -62,18 +62,16 @@ $resultat = mysqli_fetch_assoc($query);
                                $connexion = mysqli_connect("localhost","root","","reservationsalles");
                                $upLog = "UPDATE utilisateurs SET login = \"$login\" WHERE utilisateurs.login='".$resultat['login']."'";
                                $result = mysqli_query($connexion, $upLog);
-                               echo $upLog;
 
                             }
-                            if($_POST['password'] != $resultat['password'])
+                            if($_POST['password'] != $resultat['password'] && !empty($_POST['password']))
                             {
                                $password1 = $_POST['password'];
                                $passwordhash = password_hash($password1, PASSWORD_BCRYPT, array('cost' => 12));
                                $connexion = mysqli_connect("localhost","root","","reservationsalles");
                                $upPass = "UPDATE utilisateurs SET password = \"$passwordhash\" WHERE utilisateurs.password='".$resultat['password']."'";
                                $result = mysqli_query($connexion, $upPass);
-                               echo $upPass;
-
+                               
                             }
                         }
                 }

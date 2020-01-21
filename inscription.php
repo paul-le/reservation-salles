@@ -40,6 +40,8 @@
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -51,15 +53,27 @@
         <main id="maininscription">
             <section id="sectionforminscription">
                 <form id="inscriptionform" method="post" action="">
-                    <h1 id="h1inscription">- Inscription - </h1>
+                    <?php if(!isset($_SESSION['login']))
+                    { ?>
+        <h1 id="h1inscription">- Inscription - </h1>
                         <input type="text" placeholder="Identifiant" name="login" required><br/><br/>
                         <input type="password" placeholder="Mot de passe" name="password" required><br/><br/>
                         <input type="password" placeholder="Confirmation mot de passe" name="confirmationpassword" required><br/><br/>
                         <input type="submit" value="S'inscrire" name="inscription" required>
-                        <?php if($inscriptionimpossible == true){echo"<br><br>Identifiant déjà existant";}?>
+                       <?php  } else
+                    {
+                    echo"Vous êtes déjà inscrit !";
+
+                    } ?>
+
+                <?php if($inscriptionimpossible == true){echo"<br><br>Identifiant déjà existant";}?>
                 </form>
             </section>
         </main>
-        <?php include("footer.php")?>
+        
+                
+       <?php include("footer.php")?>
     </body>
+    
 </html>
+      
